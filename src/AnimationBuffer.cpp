@@ -23,7 +23,7 @@ namespace graphics {
 			frameCache_[animationKey].push_back(texture);
 		}
 		else {
-			std::cout << "Failed to load frame: " + basePath << std::endl; // Edit this for your logger.
+			Logger::getInstance().log("Failed to load frame: " + basePath, LogLevel::Error);
 		}
 	}
 	void AnimationBuffer::loadFrames(const std::string& animationKey, const std::string& basePath, unsigned int frameCount, unsigned int startFrame) {
@@ -38,7 +38,7 @@ namespace graphics {
 				frames.push_back(std::move(texture));
 			}
 			else {
-				std::cout << "Failed to load frame: " << std::to_string(index) << std::endl; // Edit this for your logger.
+				Logger::getInstance().log("Failed to load frame: " + std::to_string(index), LogLevel::Error);
 			}
 		}
 		frameCache_[animationKey] = std::move(frames);
