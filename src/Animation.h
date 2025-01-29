@@ -2,7 +2,7 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 #include <unordered_map>
-#include <iostream>
+#include "Logger/Logger.h"
 
 namespace graphics {
 
